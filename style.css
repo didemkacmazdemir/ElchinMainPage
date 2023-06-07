@@ -4,14 +4,11 @@ body {
     color: #FF4500;
 }
 #nav {
-    background-color: #FFFAF0;
+    background-color: #fdf6ee;
     height: 50px;
     display: flex;
     justify-content: space-around;
     align-items: center;
-}
-#mainContent {
-    margin: 20px;
 }
 #footer {
     background-color: #FFFACD;
