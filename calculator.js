@@ -35,7 +35,7 @@ function initialize() {
     displayUserFootprint();
 }
 
-function calculateFootprint(digital, atm, branch) {
+function calculate(digital, atm, branch) {
     // Formula: (Digital Transactions * 0.004) + (ATM Transactions * 0.4) + (Branch Visits * 2.2)
     return (digital * 0.004) + (atm * 0.4) + (branch * 2.2);
 }
@@ -64,7 +64,7 @@ function calculateFootprint() {
     var digital = Number(document.getElementById('digital-transactions').value) || 0;
     var atm = Number(document.getElementById('atm-transactions').value) || 0;
     var branch = Number(document.getElementById('branch-visits').value) || 0;
-    var footprint = calculateFootprint(digital, atm, branch);
+    var footprint = calculate(digital, atm, branch);
     customResultDiv.innerText = 'Your calculated carbon footprint: ' + footprint.toFixed(2) + ' kg';
     displaySuggestions(footprint, customSuggestionsDiv);
 }
