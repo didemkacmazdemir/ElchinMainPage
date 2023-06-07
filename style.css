@@ -1,0 +1,24 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #FFFAF0;
+    color: #FF4500;
+}
+#nav {
+    background-color: #FFFACD;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#mainContent {
+    margin: 20px;
+}
+#footer {
+    background-color: #FFFACD;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    color: black;
+}
