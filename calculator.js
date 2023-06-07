@@ -105,3 +105,12 @@ function displayAwards() {
 
     awardsDiv.innerText = 'You are currently ranked ' + rank + '/' + userIds.length + ' in our eco-friendly customer leaderboard!';
 }
+
+function toggleCollapsible() {
+    var content = document.getElementById("user-section");
+    if (content.style.display === "none") {
+        content.style.display = "block";
+    } else {
+        content.style.display = "none";
+    }
+}
