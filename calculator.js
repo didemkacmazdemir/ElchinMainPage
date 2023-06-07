@@ -44,8 +44,12 @@ function displayUserFootprint() {
     selectedUserId = userSelect.value;
     var user = data[selectedUserId];
     var footprint = user.monthlyCarbonFootprint[user.monthlyCarbonFootprint.length - 1];
+/*
     resultDiv.innerText = 'Carbon Footprint for ' + user.name + ' this month: ' + footprint.toFixed(2) + ' kg';
+*/
+/*
     displaySuggestions(footprint, suggestionsDiv);
+*/
 
     var chartData = new google.visualization.DataTable();
     chartData.addColumn('string', 'Month');
