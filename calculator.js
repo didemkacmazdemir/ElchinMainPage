@@ -96,6 +96,7 @@ function displaySuggestions(footprint, container) {
     suggestions.forEach(function(suggestion) {
         var listItem = document.createElement('li');
         listItem.innerText = suggestion;
+        listItem.style.listStyleType = 'none'; // Remove bullet point
         suggestionList.appendChild(listItem);
     });
 
