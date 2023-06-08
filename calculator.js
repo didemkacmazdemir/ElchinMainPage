@@ -1,6 +1,8 @@
 google.charts.load('current', {'packages':['corechart']});
 google.charts.setOnLoadCallback(initialize);
 
+
+
 var data = {
     '1': {'name': 'Didem Demir', 'monthlyCarbonFootprint': [4.79, 9.55, 5.15, 5.00, 3.02, 5.63]},
     '2': {'name': 'Elchin Aghazada', 'monthlyCarbonFootprint': [9.69, 4.94, 4.59, 1.91, 5.01, 5.27]},
@@ -12,6 +14,11 @@ var data = {
 };
 var months = ['January','February', 'March', 'April', 'May', 'June']
 
+var suggestions = [
+    'You can reduce your carbon footprint by doing more digital transactions instead of ATM transactions or branch visits.'+
+    ' Try to reduce the number of ATM transactions you make each month.'+
+    ' Reduce the number of branch visits by taking advantage of online banking services.'
+];
 var userIds = Object.keys(data);
 var selectedUserId = userIds[0];
 
@@ -21,6 +28,11 @@ var suggestionsDiv = document.getElementById('suggestions');
 var customResultDiv = document.getElementById('custom-result');
 var customSuggestionsDiv = document.getElementById('custom-suggestions');
 var awardsDiv = document.getElementById('awards');
+var welcomeData = document.getElementById('welcomeData');
+
+window.onload = function() {
+    a.innerText = 'Your calculated carbon footprint: ' + footprint.toFixed(2) + ' kg';
+};
 
 function initialize() {
     userIds.forEach(function(userId) {
@@ -60,6 +72,12 @@ function displayUserFootprint() {
     chart.draw(chartData, {'title': 'Carbon Footprint Over Time', 'legend': 'none'});
 
     displayAwards();
+
+    var carbonFootprintText = 'Your calculated carbon footprint: ';
+    var carbonFootprintValue = footprint ? footprint.toFixed(2) : '0.00';
+
+    welcomeData.innerHTML = '<strong>' + carbonFootprintText + carbonFootprintValue + ' kg</strong><br>' + suggestions;
+
 }
 
 function calculateFootprint() {
@@ -72,11 +90,7 @@ function calculateFootprint() {
 }
 
 function displaySuggestions(footprint, container) {
-    var suggestions = [
-        'You can reduce your carbon footprint by doing more digital transactions instead of ATM transactions or branch visits.',
-        'Try to reduce the number of ATM transactions you make each month.',
-        'Reduce the number of branch visits by taking advantage of online banking services.'
-    ];
+
 
     var suggestionList = document.createElement('ul');
     suggestions.forEach(function(suggestion) {

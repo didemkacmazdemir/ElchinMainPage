@@ -9,7 +9,8 @@
     <div class="container">
         <img src="header2.png" alt="Your Image">
     </div>
-    <div id="awards"></div>
+    <div id="welcomeData"></div>
+
     <div id="calculator-section">
         <h2>Calculate Your Carbon Footprint</h2>
         <label for="digital-transactions">Number of Digital Transactions:</label>
@@ -22,15 +23,16 @@
         <div id="custom-result" class="footprint-result"></div>
         <div id="custom-suggestions" class="suggestions"></div>
     </div>
-    <button class="collapsible" onclick="toggleCollapsible()">Toggle Content</button>
 
-    <div id="user-section" class="content">
+    <div id="user-section">
         <label for="user-select">Select a User:</label>
         <select id="user-select" onchange="displayUserFootprint()"></select>
         <div id="result" class="footprint-result"></div>
         <div id="suggestions" class="suggestions"></div>
-        <div id="chart_div"></div>
+        <div id="chart_div" style="width: 100% !important;"></div>
     </div>
+    <div id="awards"></div>
+
     <script type="text/javascript" src="calculator.js"></script>
 </body>
 </html>
