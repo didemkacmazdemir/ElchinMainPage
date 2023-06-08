@@ -2,17 +2,15 @@ google.charts.load('current', {'packages':['corechart']});
 google.charts.setOnLoadCallback(initialize);
 
 var data = {
-    '1': {'name': 'Customer 1', 'monthlyCarbonFootprint': [4.79, 9.55, 5.15, 5.00, 3.02, 5.63]},
-    '2': {'name': 'Customer 2', 'monthlyCarbonFootprint': [9.69, 4.94, 4.59, 1.91, 5.01, 5.27]},
-    '3': {'name': 'Customer 3', 'monthlyCarbonFootprint': [5.04, 1.73, 5.14, 9.60, 3.20, 5.49]},
-    '4': {'name': 'Customer 4', 'monthlyCarbonFootprint': [1.54, 5.16, 5.46, 9.33, 3.33, 5.02]},
-    '5': {'name': 'Customer 5', 'monthlyCarbonFootprint': [5.34, 1.78, 5.18, 9.45, 3.08, 5.36]},
-    '6': {'name': 'Customer 6', 'monthlyCarbonFootprint': [5.20, 2.02, 5.29, 9.51, 3.32, 5.58]},
-    '7': {'name': 'Customer 7', 'monthlyCarbonFootprint': [5.07, 1.62, 5.10, 9.50, 3.06, 5.31]},
-    '8': {'name': 'Customer 8', 'monthlyCarbonFootprint': [5.16, 1.52, 5.14, 9.32, 2.98, 5.26]},
-    '9': {'name': 'Customer 9', 'monthlyCarbonFootprint': [5.21, 1.44, 5.17, 9.30, 2.92, 5.20]},
-    '10': {'name': 'Customer 10', 'monthlyCarbonFootprint': [5.26, 1.37, 5.20, 9.28, 2.88, 5.15]}
+    '1': {'name': 'Didem Demir', 'monthlyCarbonFootprint': [4.79, 9.55, 5.15, 5.00, 3.02, 5.63]},
+    '2': {'name': 'Elchin Aghazada', 'monthlyCarbonFootprint': [9.69, 4.94, 4.59, 1.91, 5.01, 5.27]},
+    '3': {'name': 'Fariz Sirajli', 'monthlyCarbonFootprint': [5.04, 1.73, 5.14, 9.60, 3.20, 5.49]},
+    '4': {'name': 'Raul Kirsim\u00e4e', 'monthlyCarbonFootprint': [1.54, 5.16, 5.46, 9.33, 3.33, 5.02]},
+    '5': {'name': 'Olavi Lepp', 'monthlyCarbonFootprint': [5.34, 1.78, 5.18, 9.45, 3.08, 5.36]},
+    '6': {'name': 'Maris Riim', 'monthlyCarbonFootprint': [5.20, 2.02, 5.29, 9.51, 3.32, 5.58]},
+    '7': {'name': 'Marek-Meelis Puust', 'monthlyCarbonFootprint': [5.07, 1.62, 5.10, 9.50, 3.06, 5.31]}
 };
+var months = ['January','February', 'March', 'April', 'May', 'June']
 
 var userIds = Object.keys(data);
 var selectedUserId = userIds[0];
@@ -55,7 +53,7 @@ function displayUserFootprint() {
     chartData.addColumn('string', 'Month');
     chartData.addColumn('number', 'CO2 (kg)');
     chartData.addRows(user.monthlyCarbonFootprint.map(function(footprint, index) {
-        return ['Month ' + (index + 1), footprint];
+        return [months[index], footprint];
     }));
 
     var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
